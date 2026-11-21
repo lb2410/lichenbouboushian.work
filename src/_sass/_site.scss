@@ -99,6 +99,8 @@ h1, h2, h3 { line-height: 1.12; }
 .nav-list { display: flex; flex-wrap: nowrap; width: max-content; min-width: 100%; gap: .3rem 1.7rem; list-style: none; margin: 0; padding: 0; }
 .nav-list li { flex: 0 0 auto; }
 .nav-list a { position: relative; display: block; padding-block: .5rem; font-size: .95rem; text-decoration: none; }
+.nav-title-short, .site-header nav.is-compact .nav-title-full { display: none; }
+.site-header nav.is-compact .nav-title-short { display: inline; }
 .nav-list a::after { content: ""; position: absolute; inset: auto 0 .25rem; height: 2px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 180ms ease; }
 .nav-list a:hover::after, .nav-list a:focus-visible::after, .nav-list a[aria-current]::after, .nav-list a.is-in-view::after { transform: scaleX(1); }
 .home-intro { padding-block: 4rem; }
@@ -147,6 +149,7 @@ h1, h2, h3 { line-height: 1.12; }
 .button-link { display: inline-block; padding: .8rem 1.3rem; background: var(--ink); color: var(--paper); text-decoration: none; }
 .button-link:hover { background: var(--accent); color: var(--paper); }
 .project-page { max-width: 76rem; }
+.home-page-body { margin-inline: auto; }
 .project-body { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); align-items: start; gap: clamp(2rem, 5vw, 5rem); }
 .project-media { min-width: 0; }
 .project-media.is-measured {
