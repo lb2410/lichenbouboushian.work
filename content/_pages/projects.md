@@ -1,5 +1,6 @@
 ---
 title: Select Projects
+nav_link_title: Projects
 layout: projects
 show_collection_on_home_page: true
 permalink: /projects/

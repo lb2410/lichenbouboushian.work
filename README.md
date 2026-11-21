@@ -37,6 +37,8 @@ Gemfile               ruby dependencies
 
 the `title` is also the navigation label. `nav_order` puts a page in the main menu; omit it for pages that should not appear there. keep `permalink` unchanged to avoid breaking shared links.
 
+optionally set `nav_link_title` to a shorter label, such as `Projects` for `Select Projects`. the navigation uses it when the full labels do not fit; page titles remain unchanged.
+
 the homepage's text is in `home.md`. its photo grid comes from project files with `show_on_home_page: true`, ordered by `order`. four are selected initially; keep four selected for the intended four-photo layout.
 
 set `show_collection_on_home_page: true` in a page's front matter to include that page on the homepage. pages are hidden there by default; about, recent + upcoming, and select projects are currently enabled. the project index setting controls the whole homepage grid, while each project's `show_on_home_page` controls its individual card. pages remain available at their own URLs.
@@ -47,9 +49,23 @@ about uses `columns: true` to place its photo carousel beside the writing on lar
 
 ## edit or add writing
 
-copy `content/_pages/writing/example.md` into the same folder and update its title, permalink, and text. writing pages use the same two-column layout as about; set `image` and `image_alt` for one photograph, or use a `gallery` list for a carousel with optional captions as shown in the example. replace the example captions and image credits with accurate details. omit the image and gallery fields for a text-only page. headings written with `#` or `##` stay at the top while scrolling.
+create a markdown file in `content/_pages/writing/`:
 
-set `featured: true` on at least one piece to show the writing link in the navigation. if there are no writing files or none are featured, the link is hidden. the writing index lists all pieces, including unfeatured ones; unlike projects, featured writing is not added to the homepage grid. the example can be removed or replaced.
+```yaml
+---
+title: a writing title
+permalink: /writing/a-writing-title/
+description: a short description for link previews.
+---
+
+# a section
+
+your writing goes here.
+```
+
+writing pages use the same two-column layout as about; set `image` and `image_alt` for one photograph, or use a `gallery` list for a carousel with optional captions as shown below. omit image and gallery fields for a text-only page. headings written with `#` or `##` stay at the top while scrolling.
+
+the writing link appears when at least one writing piece exists. the projects link likewise appears when at least one project exists, even if none are selected for the homepage. no project grid is shown on the homepage when no projects have `show_on_home_page: true`.
 
 ## edit or add a project
 
@@ -96,7 +112,7 @@ galleries support swiping, scroll snapping, buttons, and left/right/home/end key
 
 ## photo and video captionz
 
-captions are optional front-matter fields and support markdown, including links for credits. replace the placeholder captions in the writing example before publishing. quote caption strings when they contain punctuation such as a colon.
+captions are optional front-matter fields and support markdown, including links for credits. quote caption strings when they contain punctuation such as a colon.
 
 for a page's main photograph, add `image_caption` alongside `image` and `image_alt`:
 
